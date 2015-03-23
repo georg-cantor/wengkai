@@ -29,3 +29,10 @@ Git help:
 12.命令“git push -u origin master”将本地库的内容推送到远程库，实际上是把当前的master分支推送到远程。第一次推送时加上“-u”，这样会在推送的同时，把本地的master和远程的master关联起来。
 13.从远程库克隆到本地的命令："git clone git@github.com:qindongliangnudt/wengkai.git"
 14.创建并切换到分支：git checkout -b dev，查看当前的所有分支以及当前的活动分支：git branch,其中带*的那个是当前的活动分支
+以下是关于分支的命令的总结：
+	14.1 git branch:查看所有的分支以及当前的活动分支
+	14.2 git branch <name>: 创建name分支
+	14.3 git checkout <name>: 切换到name分支
+	14.4 git checkout -b <name>: 创建以及切换到name分支
+	14.5 git merge <name>: 合并某分支到当前的分支
+	14.6 git branch -d <name>: 删除分支
