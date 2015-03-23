@@ -24,3 +24,5 @@ Git help:
 		8.2.2 然后像8.1那样，将工作区的修改丢弃。
 	8.3 如果所做的修改已经正式提交到了版本库的分支上，则只能参考6中版本回退的内容。
 9.使用“git rm”命令删除一个文件
+10.在Github上注册一个帐号，已经注册完成
+11.将本地库关联到远程库的命令“git remote add origin git@github.com:qindongliangnudt/wengkai.git”
