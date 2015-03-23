@@ -15,3 +15,4 @@ Git help:
 	6.1 git reset --hard HEAD^: 退回到上一个版本，当然git reset --hard HEAD^^:回退两个版本，git reset --hard HEAD~100:回退100个版本
 	6.2 git reset --hard 版本号: 回到版本号所代表的那个版本
 	说明：HEAD是一个指向当前版本的指针，所以在版本变换的时候非常快，效率超高。
+7.在Git仓库的目录下，有一个.git目录，这个目录下，又一个stage成为暂存区，这里存放那些已经修改却还未提交的文件
