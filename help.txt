@@ -9,4 +9,9 @@ Git help:
 	比如对文件进行了修改，还没有提交修改，可以通过此命令对这一情况进行查看
 4.运行git diff命令查看当前做了那些修改
 5.运行命令git log可以查看历史记录
-	当然更好的更直观的方式是这样的：git log --pretty=oneline，以漂亮简洁的一行一个版本的方式显示
+	5.1 当然更好的更直观的方式是这样的：git log --pretty=oneline，以漂亮简洁的一行一个版本的方式显示
+	5.2 git reflog 可以查看使用的命令的历史
+6.使用git reset命令可以在Git仓库的各个版本之间来回切换，仿似回到过去，又回到现在
+	6.1 git reset --hard HEAD^: 退回到上一个版本，当然git reset --hard HEAD^^:回退两个版本，git reset --hard HEAD~100:回退100个版本
+	6.2 git reset --hard 版本号: 回到版本号所代表的那个版本
+	说明：HEAD是一个指向当前版本的指针，所以在版本变换的时候非常快，效率超高。
