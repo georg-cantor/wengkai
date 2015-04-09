@@ -8,48 +8,58 @@ int main (int argc, const char* argv[])
 {
 	char buf[BUF_SIZE];
 	int  size = 0;
-	int  element;
 	int  *variable_array = NULL;
 	int  i;
 	char *pch = NULL;
+	char *_pch = NULL;
 	char *temp = NULL;
 
 	fgets(buf, BUF_SIZE, stdin);
 
-	for (i = strlen(buf) - 1; i >= 0; i--)
+	int  lengthofbuf = strlen(buf);
+	pch = malloc(sizeof(char) * (lengthofbuf + 1));
+	for (i = 0; i < lengthofbuf + 1; i++)
 	{
-		if (buf[i] == '-')
+		pch[i] = buf[i];
+	}
+	
+	for (i = strlen(pch); i >= 0; i--)
+	{
+		if (pch[i] == '-')
 		{
-			buf[i - 1] == '\0';
+			pch[i - 1] = pch[strlen(pch) + 1];
 			break;
 		}
 	}
-
 	
-	pch = buf + strlen(buf);
+	_pch = pch + strlen(pch) - 1;
 	
-	while (1)
+	
+	while (_pch != pch)
 	{
-		if (!isdigit(*(pch)))
+		if (!isdigit(*(_pch)))
 		{
-			if (isdigit(*(pch + 1)))
+			if (isdigit(*(_pch + 1)))
 			{
-				temp = pch + 1;
+				temp = _pch + 1;
 				size++;
-				realloc(variable_array, sizeof(int) * size);
+				variable_array = realloc(variable_array, sizeof(int) * size);
 				variable_array[size - 1] = atoi(temp);
 			}
-			*pch = '\0';
+			*_pch = '\0';
 		}
-		pch--;
+		_pch--;
 	}
+	
+	size++;
+	variable_array = realloc(variable_array, sizeof(int) * size);
+	variable_array[size - 1] = atoi(pch);
 
 	for (i = 0; i < size; i++)
 	{
-		printf("variable_array[i] ");
+		printf("%d ", variable_array[i]);
 	}
 
 	printf("\n");
-
 	return 0;
 }
